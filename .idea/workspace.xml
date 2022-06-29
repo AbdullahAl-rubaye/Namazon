@@ -5,29 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7369bcf-9dba-47f8-9b69-a7cb28f8ea2d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/Namazon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/accounts/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/accounts/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/accounts/Vendor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/exceptions/AccountAuthenticationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/exceptions/AccountCreationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/exceptions/AccountDoesntExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/exceptions/ProductNotAvailableException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/orders/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/orders/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/product/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/product/ProductCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/productCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/AddressTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CustomerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/VendorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/Namazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codedifferently/namazonshoping/Namazon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -145,7 +125,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656081385869</updated>
-      <workItem from="1656081387846" duration="34052000" />
+      <workItem from="1656081387846" duration="38219000" />
     </task>
     <servers />
   </component>

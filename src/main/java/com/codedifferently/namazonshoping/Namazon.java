@@ -15,8 +15,9 @@ import java.util.Scanner;
 public class Namazon {
     private List<Customer> Customers;
     private List<Vendor> Vendors;
+    private Account currentUser=null;
     private static final Scanner scanner = new Scanner(System.in);
-    public Namazon(List<Customer> customers, List<Vendor> vendors) {
+    public Namazon() {
         this.Customers = new ArrayList<>();;
         this.Vendors = new ArrayList<>();;
     }
@@ -37,23 +38,21 @@ public class Namazon {
         Vendors = vendors;
     }
 
-    public String SignIn(String email, String password){
+    public Account SignIn(String email, String password) throws AccountDoesntExistException,AccountCreationException {
 
-        String username, passwordI;
-        String authorized="Authentication Successful";
-        String NotAuthorized="Authentication unsuccessful";
-        Scanner s = new Scanner(System.in);
-        System.out.print("Enter username:");//username:user
-        username = s.nextLine();
-        System.out.print("Enter password:");//password:user
-        password = s.nextLine();
-        if(username.equals(email) && password.equals(password))
-        {
-            return authorized;
+
+        for(Vendor vendor: Vendors) {
+            if (vendor.getEmail().equals(email) && vendor.getPassword().equals(password)) {
+                return vendor;
+            }
         }
+        for(Customer customer: Customers) {
+            if (customer.getEmail().equals(email) && customer.getPassword().equals(password)) {
+                return customer;
+            }
+        }
+            throw new AccountDoesntExistException("msg");
 
-
-        return NotAuthorized;
 
     }
 
@@ -95,7 +94,7 @@ public class Namazon {
     public void run() throws AccountDoesntExistException, AccountCreationException, AccountAuthenticationException {
         Boolean flag = true;
         while (flag){
-            if(Customers == null)
+            if(currentUser == null)
                 flag = welcomeScreen();
             else{
                 userOptionsScreen();
@@ -111,7 +110,7 @@ public class Namazon {
         String selection = scanner.next();
         switch (selection){
             case "3":
-                Customers = null;
+                currentUser = null;
                 return false;
             default:
                 return true;
@@ -120,7 +119,7 @@ public class Namazon {
     }
     private Boolean welcomeScreen() throws AccountCreationException, AccountDoesntExistException, AccountAuthenticationException {
         Boolean flag = true;
-        String output = "Welcome to Address Book. Please select from the following options."
+        String output = "Welcome to Namazon :) . Please select from the following options."
                 +"\nPress 1 to login"
                 +"\nPress 2 to create new account"
                 +"\nPress 3 to exit";
@@ -143,14 +142,15 @@ public class Namazon {
 
     private void attemptSignIn() throws AccountCreationException,AccountDoesntExistException,AccountAuthenticationException{
         try {
+
             System.out.println("Please enter valid email:");
             String email = scanner.next();
             System.out.println("Please enter valid password");
             String password = scanner.next();
-            Customer = SignIn("abesmith@gmail.com","1232");
-        } catch (AccountAuthenticationException e) {
-            System.out.println("You entered the wrong password");
+            Account customer =  SignIn(email,password);
         } catch (AccountDoesntExistException e) {
+            System.out.println("You entered the wrong password");
+        } catch (AccountCreationException e) {
             System.out.println("The password was incorrect");
         }
 
@@ -166,14 +166,14 @@ public class Namazon {
             String email = scanner.next();
             System.out.println("Please enter password");
             String password = scanner.next();
-            Customers = (List<Customer>) signUpAsCustomer(firstName, lastName, email, password);
+            currentUser = (Customer )signUpAsCustomer(firstName, lastName, email, password);
         } catch (AccountCreationException e) {
             System.out.println("User with email all ready exist");
         }
     }
 
     public static void main(String[] args) throws AccountDoesntExistException, AccountCreationException, AccountAuthenticationException {
-        Namazon mainApplication = new Namazon(List<Customer>,List<Vendor>);
+        Namazon mainApplication = new Namazon();
         mainApplication.run();
     }
 }
